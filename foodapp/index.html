@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>A Food App, by Paul Ghayad</title>
+    <link href="main.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="container">
+        <h1>Find thousands of Restaurant Menus!</h1>
+        <form>
+          <h2>Enter A Major City:</h2>
+          <input placeholder="e.g. Philadelphia, Miami, etc." type="text" id="city"/> 
+          <br><br>
+          <input type="submit" id="cuisineBtn" name="cuisineBtn" value="Find Cuisines">
+          <h2>Choose a Cuisine: </h2>
+              <select name="cuisines" id="cuisines">
+              </select>
+              <br><br>
+        </form>
+        <button disabled id="getResBtn" name="drink">Find Restaurants</button>
+
+        <p id ="js-error-message" class="js-error-message"></p>
+        <section id="results" class="hidden">
+          <h2 style="font-size: 40px;">Restaurants</h2>
+            <select name="res" id="res">
+            </select>
+        </section>
+
+        <a hidden target="_blank" id="menu" href="http://www.google.com">Menu</a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

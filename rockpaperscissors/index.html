@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Rock Paper Scissors by Paul Ghayad</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1>Rock Paper Scissors</h1>
+  <p>Remember that: Rock smashes Scissors; Paper covers Rock, and; Scissors cuts Paper.  Have fun!</p> 
+</div>
+  
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Your Selection</h3>
+      <img id="imgUser" hidden width="150px" height="150px" src="https://api.time.com/wp-content/uploads/2020/01/colorado-sheriff-large-small-boulder-tweet.jpg?quality=85&w=1200&h=628&crop=1">
+      <div class="form-group">
+        <label for="sel1">Please make a selection:</label>
+        <select class="form-control" id="selUser">
+          <option>Rock</option>
+          <option>Paper</option>
+          <option>Scissors</option>
+        </select>
+        <br>
+        <button id="submitBtn" onclick="submitUser()" class="btn btn-success">Submit</button>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <h3>CPU Selection</h3>        
+      <img id="imgCPU" hidden width="150px" height="150px" src='/rock.jpg'>
+    </div>
+    <div class="col-sm-4">
+      <h3>Scoreboard</h3>        
+      You: <b id="scoreUser"></b><br>
+      CPU: <b id="scoreCPU"></b>
+    </div>
+  </div>
+  <div style="text-align: center" class="row">
+    <h1 id="result">Result</h1>
+    <button disabled id="playAgainBtn" onclick="playAgain()" class="btn btn-danger">Play Again</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

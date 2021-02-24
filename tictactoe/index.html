@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Tic-Tac-Toe by Paul Ghayad</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+    button {
+      width: 100px;
+      height: 100px;
+    }
+
+    #tl {
+     
+    }
+  </style>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1>Tic Tac Toe</h1>
+  <p>Can you tackle the computer?</p> 
+</div>
+  
+<div class="container text-center">
+  <button id="tl" onclick="mark(this.id)" class="btn-lg">_</button>
+  <button id="tc" onclick="mark(this.id)" class="btn-lg">_</button>
+  <button id="tr" onclick="mark(this.id)" class="btn-lg">_</button><br>
+  <button id="ml" onclick="mark(this.id)" class="btn-lg">_</button>
+  <button id="mc" onclick="mark(this.id)" class="btn-lg">_</button>
+  <button id="mr" onclick="mark(this.id)" class="btn-lg">_</button><br>
+  <button id="bl" onclick="mark(this.id)" class="btn-lg">_</button>
+  <button id="bc" onclick="mark(this.id)" class="btn-lg">_</button>
+  <button id="br" onclick="mark(this.id)" class="btn-lg">_</button><br><br>
+  <button id="playAgain" onclick="playAgain()" class="btn btn-danger" style="text-align: center" disabled>Play Again</button>
+</div>
+
+<script>
+  /*
+    To do
+      -logic for a completed board to prompt user to play again
+        -create Play Again button and enable
+      -alert when CPU wins
+  */
+  let tl = $('#tl')
+  let tc = $('#tc')
+  let tr = $('#tr')
+  let ml = $('#ml')
+  let mc = $('#mc') //center square
+  let mr = $('#mr')
+  let bl = $('#bl')
+  let bc = $('#bc')
+  let br = $('#br')
+  let again = $('#playAgain')
+  let ctr = 0;
+
+  let firstMove = true;
+
+  function playAgain(){
+    location.reload();
+  }
+
+  function mark(id){
+    console.log(id)
+
+    //if space not occupied by O or X
+    if($('#' + id).html() === 'O' || $('#' + id).html() === 'X'){
+      alert('cannot move here')
+    }else{
+      $('#' + id).html("X").css('border', '5px solid green')
+
+      //winning conditions
+      if( tl.html() == 'X' && tc.html() == 'X' && tr.html() == 'X' ||
+          ml.html() == 'X' && mc.html() == 'X' && mr.html() == 'X' ||
+          bl.html() == 'X' && bc.html() == 'X' && br.html() == 'X' ||
+          tl.html() == 'X' && ml.html() == 'X' && bl.html() == 'X' ||
+          tc.html() == 'X' && mc.html() == 'X' && bc.html() == 'X' ||
+          tr.html() == 'X' && mr.html() == 'X' && br.html() == 'X' ||
+          tl.html() == 'X' && mc.html() == 'X' && br.html() == 'X' ||
+          bl.html() == 'X' && mc.html() == 'X' && tr.html() == 'X' ){
+
+        /*tl.css('border', '5px solid gold')
+        mc.css('border', '5px solid gold')
+        br.css('border', '5px solid gold')*/
+        alert('you win!');
+        disableBtns();
+        again.attr('disabled', false);
+        //enable Play Again button
+      }else{
+        moveCPU($('#' + id));
+      }
+
+      
+    }
+    
+  }
+
+  function moveCPU(e){
+    let rand = Math.round(Math.random()*8);
+    let randCorn = Math.round(Math.random()*3);
+
+    //cpu grabs opposite corner of where user moved 1st
+    /*if(firstMove){
+      if(tl.html() == 'X' && br.html() == '_'){ 
+        console.log('in here')
+        br.html('O').css('border', '5px solid red') 
+      }else if(tr.html() == 'X' && bl.html() == '_'){ 
+        bl.html('O').css('border', '5px solid red') 
+      }else if(bl.html() == 'X' && tr.html() == '_'){ 
+        tr.html('O').css('border', '5px solid red') 
+      }else if(br.html() == 'X' && tl.html() == '_'){ 
+        tl.html('O').css('border', '5px solid red') 
+      }
+    
+      firstMove = false;
+    }*/
+    if(mc.html() == "_"){
+      mc.html('O').css('border', '5px solid red') 
+    }else{
+
+
+
+      //cpu goes for the win
+      if(tl.html() == 'O' && tc.html() == 'O' && tr.html() == '_'){
+        tr.html('O').css('border', '5px solid red')
+      }else if(tc.html() == 'O' && tr.html() == 'O' && tl.html() == '_'){
+        tl.html('O').css('border', '5px solid red')
+      }else if(tl.html() == 'O' && tr.html() == 'O' && tc.html() == '_'){
+        tc.html('O').css('border', '5px solid red')
+      }else if(tl.html() == 'O' && ml.html() == 'O' && bl.html() == '_'){
+        bl.html('O').css('border', '5px solid red')
+      }else if(tl.html() == 'O' && bl.html() == 'O' && ml.html() == '_'){
+        ml.html('O').css('border', '5px solid red')
+      }else if(ml.html() == 'O' && bl.html() == 'O' && tl.html() == '_'){
+        tl.html('O').css('border', '5px solid red')
+      }else if(tc.html() == 'O' && mc.html() == 'O' && bc.html() == '_'){
+        bc.html('O').css('border', '5px solid red')
+      }else if(tc.html() == 'O' && bc.html() == 'O' && mc.html() == '_'){
+        mc.html('O').css('border', '5px solid red')
+      }else if(mc.html() == 'O' && bc.html() == 'O' && tc.html() == '_'){
+        tc.html('O').css('border', '5px solid red')
+      }else if(tr.html() == 'O' && mr.html() == 'O' && br.html() == '_'){
+        br.html('O').css('border', '5px solid red')
+      }else if(tr.html() == 'O' && br.html() == 'O' && mr.html() == '_'){
+        mr.html('O').css('border', '5px solid red')
+      }else if(mr.html() == 'O' && br.html() == 'O' && tr.html() == '_'){
+        tr.html('O').css('border', '5px solid red')
+      }else if(ml.html() == 'O' && mc.html() == 'O' && mr.html() == '_'){
+        mr.html('O').css('border', '5px solid red')
+      }else if(ml.html() == 'O' && mr.html() == 'O' && mc.html() == '_'){
+        mc.html('O').css('border', '5px solid red')
+      }else if(mc.html() == 'O' && mr.html() == 'O' && ml.html() == '_'){
+        ml.html('O').css('border', '5px solid red')
+      }else if(bl.html() == 'O' && bc.html() == 'O' && br.html() == '_'){
+        br.html('O').css('border', '5px solid red')
+      }else if(bl.html() == 'O' && br.html() == 'O' && bc.html() == '_'){
+        bc.html('O').css('border', '5px solid red')
+      }else if(bc.html() == 'O' && br.html() == 'O' && bl.html() == '_'){
+        bl.html('O').css('border', '5px solid red')
+      }else if(tl.html() == 'O' && mc.html() == 'O' && br.html() == '_'){
+        br.html('O').css('border', '5px solid red')
+      }else if(tl.html() == 'O' && br.html() == 'O' && mc.html() == '_'){
+        mc.html('O').css('border', '5px solid red')
+      }else if(mc.html() == 'O' && br.html() == 'O' && tl.html() == '_'){
+        tl.html('O').css('border', '5px solid red')
+      }else if(bl.html() == 'O' && mc.html() == 'O' && tr.html() == '_'){
+        tr.html('O').css('border', '5px solid red')
+      }else if(bl.html() == 'O' && tr.html() == 'O' && mc.html() == '_'){
+        mc.html('O').css('border', '5px solid red')
+      }else if(mc.html() == 'O' && tr.html() == 'O' && bl.html() == '_'){
+        bl.html('O').css('border', '5px solid red')
+      }
+
+      //block user from winning
+      else if(tl.html() == 'X' && tc.html() == 'X' && tr.html() == '_'){
+        tr.html('O').css('border', '5px solid red')
+      }else if(tc.html() == 'X' && tr.html() == 'X' && tl.html() == '_'){
+        tl.html('O').css('border', '5px solid red')
+      }else if(tl.html() == 'X' && tr.html() == 'X' && tc.html() == '_'){
+        tc.html('O').css('border', '5px solid red')
+      }else if(tl.html() == 'X' && ml.html() == 'X' && bl.html() == '_'){
+        bl.html('O').css('border', '5px solid red')
+      }else if(tl.html() == 'X' && bl.html() == 'X' && ml.html() == '_'){
+        ml.html('O').css('border', '5px solid red')
+      }else if(ml.html() == 'X' && bl.html() == 'X' && tl.html() == '_'){
+        tl.html('O').css('border', '5px solid red')
+      }else if(tc.html() == 'X' && mc.html() == 'X' && bc.html() == '_'){
+        bc.html('O').css('border', '5px solid red')
+      }else if(tc.html() == 'X' && bc.html() == 'X' && mc.html() == '_'){
+        mc.html('O').css('border', '5px solid red')
+      }else if(mc.html() == 'X' && bc.html() == 'X' && tc.html() == '_'){
+        tc.html('O').css('border', '5px solid red')
+      }else if(tr.html() == 'X' && mr.html() == 'X' && br.html() == '_'){
+        br.html('O').css('border', '5px solid red')
+      }else if(tr.html() == 'X' && br.html() == 'X' && mr.html() == '_'){
+        mr.html('O').css('border', '5px solid red')
+      }else if(mr.html() == 'X' && br.html() == 'X' && tr.html() == '_'){
+        tr.html('O').css('border', '5px solid red')
+      }else if(ml.html() == 'X' && mc.html() == 'X' && mr.html() == '_'){
+        mr.html('O').css('border', '5px solid red')
+      }else if(ml.html() == 'X' && mr.html() == 'X' && mc.html() == '_'){
+        mc.html('O').css('border', '5px solid red')
+      }else if(mc.html() == 'X' && mr.html() == 'X' && ml.html() == '_'){
+        ml.html('O').css('border', '5px solid red')
+      }else if(bl.html() == 'X' && bc.html() == 'X' && br.html() == '_'){
+        br.html('O').css('border', '5px solid red')
+      }else if(bl.html() == 'X' && br.html() == 'X' && bc.html() == '_'){
+        bc.html('O').css('border', '5px solid red')
+      }else if(bc.html() == 'X' && br.html() == 'X' && bl.html() == '_'){
+        bl.html('O').css('border', '5px solid red')
+      }else if(tl.html() == 'X' && mc.html() == 'X' && br.html() == '_'){
+        br.html('O').css('border', '5px solid red')
+      }else if(tl.html() == 'X' && br.html() == 'X' && mc.html() == '_'){
+        mc.html('O').css('border', '5px solid red')
+      }else if(mc.html() == 'X' && br.html() == 'X' && tl.html() == '_'){
+        tl.html('O').css('border', '5px solid red')
+      }else if(bl.html() == 'X' && mc.html() == 'X' && tr.html() == '_'){
+        tr.html('O').css('border', '5px solid red')
+      }else if(bl.html() == 'X' && tr.html() == 'X' && mc.html() == '_'){
+        mc.html('O').css('border', '5px solid red')
+      }else if(mc.html() == 'X' && tr.html() == 'X' && bl.html() == '_'){
+        bl.html('O').css('border', '5px solid red')
+      }else{  //CPU makes a random move
+        if(tl.html() == '_'){
+          tl.html('O').css('border', '5px solid red')
+        }else if(tr.html() == '_'){
+          tr.html('O').css('border', '5px solid red')
+        }else if(bl.html() == '_'){
+          bl.html('O').css('border', '5px solid red')
+        }else if(br.html() == '_'){
+          br.html('O').css('border', '5px solid red')
+        }else if(ml.html() == '_'){
+          ml.html('O').css('border', '5px solid red')
+        }else if(tc.html() == '_'){
+          tc.html('O').css('border', '5px solid red')
+        }else if(mr.html() == '_'){
+          mr.html('O').css('border', '5px solid red')
+        }else if(bc.html() == '_'){
+          bc.html('O').css('border', '5px solid red')
+        }
+      }
+      if( tl.html() == 'O' && tc.html() == 'O' && tr.html() == 'O' ||
+          ml.html() == 'O' && mc.html() == 'O' && mr.html() == 'O' ||
+          bl.html() == 'O' && bc.html() == 'O' && br.html() == 'O' ||
+          tl.html() == 'O' && ml.html() == 'O' && bl.html() == 'O' ||
+          tc.html() == 'O' && mc.html() == 'O' && bc.html() == 'O' ||
+          tr.html() == 'O' && mr.html() == 'O' && br.html() == 'O' ||
+          tl.html() == 'O' && mc.html() == 'O' && br.html() == 'O' ||
+          bl.html() == 'O' && mc.html() == 'O' && tr.html() == 'O' ){
+
+        /*tl.css('border', '5px solid gold')
+        mc.css('border', '5px solid gold')
+        br.css('border', '5px solid gold')*/
+        alert('CPU wins...')
+        disableBtns();
+        again.attr('disabled', false);
+
+
+      }
+
+      //it's a draw
+        console.log('top left: ' + tl.html())
+        if(tl.html() != '_' && tc.html() != '_' && tr.html() != '_' &&
+           ml.html() != '_' && mc.html() != '_' && mr.html() != '_' &&
+           bl.html() != '_' && bc.html() != '_' && br.html() != '_'
+          ){
+          alert('it\'s a draw...')
+          disableBtns();
+          again.attr('disabled', false);
+        }
+    }
+  }
+
+  function disableBtns(){
+    tl.attr('disabled', true)
+    tc.attr('disabled', true)
+    tr.attr('disabled', true)
+    ml.attr('disabled', true)
+    mc.attr('disabled', true)
+    mr.attr('disabled', true)
+    bl.attr('disabled', true)
+    bc.attr('disabled', true)
+    br.attr('disabled', true)
+  }
+
+
+    
+</script>
+
+</body>
+</html>

@@ -1,15 +1,26 @@
 .footer1 {
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   background-color: red;
-   color: white;
-   text-align: center;
+  position: relative;
+  /*margin-top: -180px;*/
+  /* negative value of footer height */
+  height: 30px;
+  clear: both;
+  background-color: black;
+  
 }
 
 * {
   box-sizing: border-box;
+}
+
+body {
+  background-color: lightgrey;
+}
+
+/*nav {
+  background-color: pink;
+}*/
+.jumbotron {
+  background-color: lightgrey;
 }
 
 main {
@@ -42,9 +53,16 @@ a.thumbnail:hover {
 }
 
 .myInterests {
-  //background-color: pink;
+  /*background-color: pink;*/
 }
 
 li:hover {
-  background-color: yellow;
+  /**/
+  /*background-color: grey;*/
+}
+
+hr {
+  width: 1160px;
+  border: 3px dotted lightyellow;
+  /*border-radius: 5px;*/
 }

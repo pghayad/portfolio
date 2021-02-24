@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Quiz App by Paul Ghayad</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1>Random Knowledge Quiz</h1>
+  <p>Good Luck!</p> 
+</div>
+
+<div class="container">
+  Correct/Total
+  <p id="correct">0/0</p>
+</div>
+<div class="container">
+  <p id="question">What is the capital of Pennsylvania?</p>
+  <div id="border0" class="form-check">
+    <input onclick="register(this)" class="form-check-input" type="radio" name="exampleRadios" id="button0" value="option0">
+    <label id="label0" class="form-check-label" for="button0">
+      Philadelphia
+    </label>
+</div>
+<div id="border1" class="form-check">
+  <input onclick="register(this)" class="form-check-input" type="radio" name="exampleRadios" id="button1" value="option1">
+  <label id="label1" class="form-check-label" for="button1">
+    Harrisburg
+  </label>
+</div>
+<div id="border2" class="form-check">
+  <input onclick="register(this)" class="form-check-input" type="radio" name="exampleRadios" id="button2" value="option2">
+  <label id="label2" class="form-check-label" for="button2">
+    Lancaster
+  </label>
+</div>
+
+<button id="submitBtn" class="btn btn-success" onclick="submit()" disabled>Submit</button>
+<button id="nextBtn" class="btn btn-info" onclick="next()" disabled>Next Question</button>
+<button id="againBtn" class="btn btn-warning" onclick="playAgain()" disabled>Play Again</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Paul Ghayad's Portfolio</title>
+  <title>Paul Ghayad Portfolio</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -11,31 +11,32 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav style="background-color: lightblue;" class="navbar navbar-default">
-    <main>
+  <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#">My Portfolio</a>
+        <a class="navbar-brand" href="#">Paul Ghayad</a>
       </div>
       <ul class="nav navbar-nav">
-        <li><a href="#">Home</a></li>
-        <li><a href="index.html#aboutme">About Me</a></li>
-        <li><a href="index.html#projects">Projects</a></li>
-        <li><a href="index.html#misc">Miscellaneous</a></li>
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#aboutme">About Me</a></li>
+        <li><a href="#myinterests">My Interests</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#mylocation">My Location</a></li>
+        <li><a href="#contactme">Contact Me</a></li>
       </ul>
     </div>
   </nav>
 <div class="jumbotron text-center">
   <h1>Paul Ghayad</h1>
   <p>Software Engineer</p> 
-  <img height="720px" width="720px" src="/img/me_on_bike.jpg">
+  <img width="800px" height="600px" src="/img/me_on_bike.jpg">
 </div>
   
 <div id="aboutme" class="container">
   <div class="row">
     <div style="background-color: lightblue;" class="col-sm-12 col-lg-12">
-      <h3>About Me</h3>
-      <a href="/rockpaperscissors/index.html">Rock Paper Scissors</a>
+      <a id="aboutme"></a>
+      <h3 class="text-center">About Me</h3>
       <p>Hi, my name is Paul, and I live in the suburbs of Philadelphia.  I grew up in this area, and then went down to Washington, D.C. for college.</p>
       <p>I majored in Economics, which I enjoyed.  But when I arrived at my first job out of college, I found myself interacting mostly with the software engineers at the company.  I could tell I had developed a newfound interest.</p>
       <p>With that feeling, I enrolled in a few Computer Science courses online.  In a short period of time, I was able to land my first Web Developer position in Northern Virginia.</p>
@@ -47,47 +48,96 @@
 
   </div>
 </div>
-
+<hr>
+<h3 class="text-center">My Interests</h3><br>
+<div id="myinterests" class="text-center col-sm-6 col-lg-6">
+  <div class="container">
+     <div class="hero myInterests">
+          
+            <img src="/img/tennis.jpg" alt="tennis"/>
+      </div>
+      <br><br>
+      <div class="thumbnails myInterests">
+            <a class="thumbnail"><img src="/img/tennis.jpg" alt="tennis"/></a>
+            <a class="thumbnail"><img src="/img/thinkful.png" alt="thinkful"/></a>
+            <a class="thumbnail"><img src="/img/chess.jpg" alt="chess"/></a>
+            <a class="thumbnail"><img src="/img/cat.jpg" alt="cat"/></a>
+      </div>
+  </div>
+</div>
+<div class="col-sm-6 col-lg-6">
+    <p id="description">
+      Tennis is one of my all-time favorite sports.  I am actually a USPTA 
+      Certified Tennis Instructor. <br>I play about once or twice per week.
+      When the weather is nice, you can find me outside on a <br>court. Tennis is so great
+      because it is for people of all ages and is a great workout.
+    </p>
+</div>
+<hr>
 <div id="projects" class="container">
   <div class="row">
     <div style="background-color: lightgreen;" class="col-sm-12 col-lg-12">
-      <h3>Projects</h3>
-      <p>Shopping List</p>
-      <p>Quiz App</p>
+      <a id="projects"></a>
+      <h3 class="text-center">Projects</h3>
+      <ul>
+        <div class="panel panel-default panel-warning">
+          <div class="panel-body"><a target="_blank" href="/cocktailapp/index.html">Cocktail App</a></div>
+        </div>
+        <div class="panel panel-warning">
+          <div class="panel-body"><a target="_blank" href="/foodapp/index.html">Food/Restaurant App</a></div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body"><a target="_blank" href="/quizapp/index.html">Quiz App</a></div>
+        </div>
+      </ul>
+      <h3 class="text-center">Side Projects / Games</h3>
+      <ul>
+        <div class="panel panel-warning">
+          <div class="panel-body"><a target="_blank" href="/rockpaperscissors/index.html">Rock Paper Scissors</a></div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body"><a target="_blank" href="/hangman/index.html">Hangman</a></div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body"><a target="_blank" href="/tictactoe/index.html">Tic Tac Toe</a></div>
+        </div>
+        <div class="panel panel-warning">
+      <div class="panel-heading">Panel with panel-warning class</div>
+      <div class="panel-body">Panel Content</div>
+    </div>
+      </ul>
     </div>
     <br>
   </div>
 </div>
 
-<div class="container">
-   <div class="hero myInterests">
-        <h3>My Interests</h3>
-          <img src="https://img.resized.co/offtheball/eyJkYXRhIjoie1widXJsXCI6XCJodHRwczpcXFwvXFxcL21lZGlhLnJhZGlvY21zLm5ldFxcXC91cGxvYWRzXFxcLzIwMjBcXFwvMDVcXFwvMjUxMjU1MTJcXFwvMTkwMjk0Mi0xMDI0eDY5Mi5qcGdcIixcIndpZHRoXCI6OTcwLFwiaGVpZ2h0XCI6NDg1LFwiZGVmYXVsdFwiOlwiaHR0cHM6XFxcL1xcXC93d3cub2ZmdGhlYmFsbC5jb21cXFwvaW1hZ2VzXFxcL25vLWltYWdlLnBuZz92PTNcIn0iLCJoYXNoIjoiMDQ2MDE2NmU3MDY4NzZjZmZjYWU3M2VmODNjODEzOTJkMTU2YWM3MyJ9/sport-s-return-in-new-zealand-continues-with-live-tennis-action.jpg" alt="tennis racquet and balls."/>
-        </div>
-        <br><br>
-        <div class="thumbnails myInterests">
-          <a class="thumbnail"><img src="https://img.resized.co/offtheball/eyJkYXRhIjoie1widXJsXCI6XCJodHRwczpcXFwvXFxcL21lZGlhLnJhZGlvY21zLm5ldFxcXC91cGxvYWRzXFxcLzIwMjBcXFwvMDVcXFwvMjUxMjU1MTJcXFwvMTkwMjk0Mi0xMDI0eDY5Mi5qcGdcIixcIndpZHRoXCI6OTcwLFwiaGVpZ2h0XCI6NDg1LFwiZGVmYXVsdFwiOlwiaHR0cHM6XFxcL1xcXC93d3cub2ZmdGhlYmFsbC5jb21cXFwvaW1hZ2VzXFxcL25vLWltYWdlLnBuZz92PTNcIn0iLCJoYXNoIjoiMDQ2MDE2NmU3MDY4NzZjZmZjYWU3M2VmODNjODEzOTJkMTU2YWM3MyJ9/sport-s-return-in-new-zealand-continues-with-live-tennis-action.jpg" alt="Thinkful logo"/></a>
-          <a class="thumbnail"><img src="https://tf-assets-prod.s3.amazonaws.com/splash/social/thinkful_logo.png" alt="Chess"/></a>
-          <a class="thumbnail"><img src="https://www.incimages.com/uploaded_files/image/1920x1080/getty_BA65213_9707769704500326_49933.jpg" alt="An orange cat licks its paw."/></a>
-          <a class="thumbnail"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-65/cat4.jpg" alt="A content brown cat lounges with eyes closed."/></a>
-        </div>
+<hr>
+<div id="mylocation" class="col-sm-12 col-lg-12 text-center">
+  <h4>My Location</h4>
+  <iframe class="" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d195601.28720359915!2d-75.25811239143708!3d40.00241367555988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6b7d8d4b54beb%3A0x89f514d88c3e58c1!2sPhiladelphia%2C%20PA!5e0!3m2!1sen!2sus!4v1609025857562!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 </div>
-
-<div id="projects" class="container">
+<!-- <div class="col-sm-6 col-lg-6">
+  <h4>My Next Travel Destination</h4>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d167998.10803373056!2d2.206977064368058!3d48.858774103123785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2sParis%2C%20France!5e0!3m2!1sen!2sus!4v1609195069353!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+</div> -->
+<hr>
+<div id="contactme" class="container text-center">
   <div class="row">
-    <div style="background-color: pink;" class="col-sm-12 col-lg-12">
+    <div style="background-color: ;" class="col-sm-12 col-lg-12">
+      <a id="contactme"></a>
       <h3>Contact Me</h3>
-      <p>Shopping List</p>
-      <p>Quiz App</p>
+      <a href="https://github.com/pghayad" target="_blank"><img width="25px" height="25px" src="/img/github.png"></a>
+      <a href="https://www.linkedin.com/in/pghayad/" target="_blank"><img width="25px" height="25px" src="/img/linkedin.png"></a>
+      <a href="mailto:pghayad@gmail.com" target="_blank"><img width="25px" height="25px" src="/img/gmail.png"></a>
     </div>
     <br>
   </div>
 </div>
-<!--
-<div class="footer1">
-  <p>Footer</p>
+<br><br>
+<div class="footer1 text-center">
+  <p>Copyright &#169; Paul Ghayad 2021</p>
 </div>
--->
+
 </main>
 <script src="script.js"></script>
 </body>

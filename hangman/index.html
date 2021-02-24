@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hangman by Paul Ghayad</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+    .blue {
+      background-color: blue;
+      width: 25px;
+      height: 125px;
+      display: none;
+    }
+
+    .green {
+      background-color: green;
+      width: 25px;
+      height: 125px;
+      display: none;
+    }
+
+    .yellow {
+      background-color: yellow;
+      width: 25px;
+      height: 125px;
+      display: none;
+    }
+
+    .orange {
+      background-color: orange;
+      width: 25px;
+      height: 125px;
+      display: none;
+    }
+
+    .red {
+      background-color: red;
+      width: 25px;
+      height: 125px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1>Hangman</h1>
+  <p>Guess letters until you spell an entire word, but before you draw the Rainbow!</p> 
+  <p id="demo"></p>
+</div>
+  
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Rainbow</h3>
+      <div class="blue"></div>
+      <div class="green"></div>
+      <div class="yellow"></div>
+      <div class="orange"></div>
+      <div class="red"></div>
+    </div>
+  <div id="div2" class="col-sm-4">
+      <h3><u>Theme</u>: Animals</h3>
+      <p id="word">Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      Enter A Letter: <input onkeypress="return /[a-z]/i.test(event.key)" maxlength="1" id="guess"/><br><br><button class="btn btn-success" id="submitBtn" onclick="submit()">Submit</button>
+      <p id="letterGuessed" hidden>Letter Already Guessed. <br>Try Another Letter.</p>
+    </div>
+    <div id="div3" class="col-sm-4">
+      <h3>Guesses</h3>        
+      <p id="guesses">Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p><button onclick="reset()" id="playBtn" class="btn btn-danger" disabled>Play Again</button></p>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  var words = ["elephant", "tiger", "lion", "monkey", "deer", "bobcat", "dolphin", "chicken", "hamster", "parakeet"];
+  var idx = Math.round(Math.random()*(words.length-1));
+  var word = words[idx];
+  var hiddenWord = [];
+  var lettersUsed = [];
+  var guesses = 5;
+
+  //need alphabet to check against user's guess to see if it's valid
+  var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h","i", "j","k",
+          "l", "m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+  //var isCorrect = true;
+
+  function welcome(){
+    console.log("welcome to Hangman! You get 5 missed guesses until the game is over.");
+    for(var i = 0; i < word.length; i++){
+      hiddenWord.push("_");
+    }
+    showWord();
+  }
+
+  function showWord(){
+    $('#word').html("<h3>" + hiddenWord.join(" ") + "</h3><br>")
+    $('#guesses').html("Letters used: " + lettersUsed + "<br>Guesses Left: " + guesses);
+  }
+
+  function reset(){
+    location.reload()
+  }
+
+  function submit(){
+    let guess = $('#guess').val().toLowerCase();
+    let flip = false;
+    let ctr = 0, winCtr = 0;
+    let rainbow = 0;
+
+
+
+    //check if letter already used
+    for(var i = 0; i < lettersUsed.length; i++){
+      if(guess == lettersUsed[i]){
+        console.log("letter already used. try again")
+        flip = true;
+        break;
+      }
+    }
+
+
+
+    if(flip){
+      $('#letterGuessed').html("Letter already used.").slideDown()
+    }else if (guess.match(/[A-Z]/)) {
+      $('#letterGuessed').html("Invalid entry.").slideDown()
+    }else{
+      $('#letterGuessed').slideUp()
+
+      //check if letter in word
+      for(var i = 0; i < hiddenWord.length; i++){
+        if(guess == word.charAt(i)){  //if guess is correct
+          hiddenWord[i] = guess;
+        }else{
+          ctr++; //increment ctr if wrong guess
+          continue;
+        }
+      }
+
+      //determine if won the game
+      for(let i = 0; i < hiddenWord.length; i++){
+        if(hiddenWord[i] != '_'){
+          winCtr++;
+        }
+      }
+
+      if(winCtr == word.length){
+        $('#submitBtn').attr('disabled', true);
+        $('#playBtn').attr('disabled', false);
+        $('#div3').append('<h3>You Won! <br>Play Again?</h3>')
+      }
+
+      //took some time: reduce guesses by 1 after incorrect guess
+      if(ctr == word.length){
+        console.log('incorrect guess.')
+        guesses--;
+
+        //create the rainbow
+        if(guesses == 4){
+          $('.blue').css('display', 'inline-block')
+        }else if(guesses == 3){
+          $('.green').css('display', 'inline-block')
+        }else if(guesses == 2){
+          $('.yellow').css('display', 'inline-block')
+        }else if(guesses == 1){
+          $('.orange').css('display', 'inline-block')
+        }else{  //no guesses left
+          $('.red').css('display', 'inline-block')
+          $('#playBtn').attr('disabled', false);
+          $('#submitBtn').attr('disabled', true);
+          $('#div3').append('<h3>You Lost. <br>Play Again?</h3>')
+        }
+      }
+
+      lettersUsed.push(guess);
+      showWord();
+      $('#guess').val('');  //clear input field
+      $('#guesses').html("Letters Used: " + lettersUsed + "<br>Guesses Left: " + guesses);
+    }
+
+  }
+
+  welcome();
+
+  // Set the date we're counting down to
+var countDownDate = new Date().getTime() + 300100;
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = minutes + "m " + seconds + "s ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "TIME EXPIRED!";
+    $('#playBtn').attr('disabled', false);
+    $('#submitBtn').attr('disabled', true);
+    $('#div3').append('<h3>Time is Up! <br>Play Again?</h3>')
+  }
+}, 1000);
+</script>
+</body>
+</html>
