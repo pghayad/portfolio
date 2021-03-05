@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>War by Paul Ghayad</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1>The Game of War</h1>
+  <p>Do you have what it takes?</p> 
+</div>
+  
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Players' Hands</h3>
+        User Hand: <p id="handUser"></p><br>
+        CPU Hand: <p id="handCPU"></p>
+    </div>
+    <div class="col-sm-4">
+      <h3>War Cards</h3>  
+      <h5 id="msg" hidden>It is time for war.</h5>      
+      <p id="warCards"></p>
+      <div id="dialog" title="Results" hidden>
+       <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the &apos;x&apos; icon.</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <h3>Total Cards Situation</h3>        
+      Total Cards for User: <p id="numUser"></p>
+      Total Cards for CPU: <p id="numCPU"></p>
+    </div>
+  </div>
+
+  <!-- Trigger the modal with a button 
+  <button type="button" id="betBtn" onclick="bet()" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">Bet</button>-->
+  <button class="btn btn-success btn-lg" id="playBtn" onclick="play()">Play</button>
+  <button class="btn btn-danger btn-lg" id="contBtn" onclick="cont()" disabled>Continue War</button>
+  <button class="btn btn-info btn-lg" id="nhBtn" onclick="nextHand()" disabled>Next Hand</button>
+  
+</div>
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 id="modalHead" class="modal-title">Draw Cards</h4>
+        </div>
+        <div class="modal-body">
+          <p id="modalText">Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  </body>
+</html>
