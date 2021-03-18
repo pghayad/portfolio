@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Weather App, by Paul Ghayad</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+        <h1>Find the weather forecast for any city!</h1>
+        <img id="stpattys" src="/img/stpattys.jpg" width="100" height="100" hidden/>
+        <table>
+          <tr>
+            <th>
+              <form>
+                <input maxlength="40" required type="text" id="zip" placeholder="e.g. Beirut, 90210, etc."/> 
+                <input type="submit" id="weath" name="weath" value="Find Weather">
+              </form>
+            </th>
+          </tr>
+        </table>
+        
+        <h3 hidden id="title"></h3>
+        <p id="current"></p>
+        <p id="weather"></p>
+        <p id="forecast"></p>
+
+      <div class="pop">
+        <h3>Popular Cities</h3>
+        <button onclick="popular(this)">Philadelphia,US</button>
+        <button onclick="popular(this)">Paris,FR</button>
+        <button onclick="popular(this)">Montreal,CA</button>
+        <button onclick="popular(this)">Rome,IT</button>
+        <button onclick="popular(this)">New York,US</button>
+        <button onclick="popular(this)">Beirut,LB</button>
+        <button onclick="popular(this)">Kingston,JM</button>
+        <button onclick="popular(this)">Stuttgart,DE</button>
+      </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

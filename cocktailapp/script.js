@@ -10,7 +10,7 @@ function getDrink(){
   .catch(error => alert('Please check your spelling and try again'));
 }
 
-//https://www.thecocktaildb.com/api/json/v1/1/random.php
+
 function getRandom(){
   fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
   .then(response => response.json())
