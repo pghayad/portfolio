@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Video Poker, by Paul Ghayad</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+      <div class="col-sm-6" style="background-color:lavender;">
+        <h1>Video Poker</h1>
+          <h3>My Chips</h3>
+          <p id="chips"></p>
+          <h3>What do you bet?</h3>
+          <select id="bet">
+            <option>5</option>
+            <option>10</option>
+            <option>25</option>
+            <option>50</option>
+            <option>100</option>
+          </select>
+          <button id="submitBtn" onclick="submit()" class="btn btn-danger">Submit</button>
+          <br><br><br>
+          <p>Here is your hand:</p>
+          <i>Click cards to make them eligible for swap</i>
+          <div id="cards" class="btn-group">
+            
+          </div>
+          <br><br>
+          <button disabled id="swapBtn" class="btn btn-success" onclick="swap()">Swap Cards</button>
+        </div>
+      
+      <div class="col-sm-6" style="background-color:lavenderblush;">
+        <h1>Payout Table</h1>
+        <img src="img/pay_table.PNG">
+        <h2 id="hand"></h2>
+        <button hidden id="resetBtn" onclick="reset()">Deal Next Hand</button>
+        <button hidden id="playAgainBtn" onclick="playAgain()">Play Again</button>
+      </div>
+      </div>
+    </div>
+  
+
+<script src="script.js"></script>
+</body>
+</html>

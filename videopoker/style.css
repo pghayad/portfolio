@@ -1,0 +1,12 @@
+* {
+  box-sizing: border-box;
+}
+
+.highlight {
+  background-color: orange;
+  color: white;
+}
+
+button:hover {
+  color: white;
+}

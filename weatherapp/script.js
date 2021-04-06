@@ -37,7 +37,7 @@ function search(){
 function current(data){
   //console.log(data)
   $('#current').empty();
-  $('#current').append("Current temp: " + data.main.temp + "<br>")
+  $('#current').append("Current temp: " + Math.round(data.main.temp) + "&#8457;<br>")
   $('#current').append(data.weather[0].main + "/" + data.weather[0].description + "<br><br>");
   $('#title').html("Weather for " + data.name + ", " + data.sys.country)
   $('#title').show()
@@ -49,13 +49,41 @@ function getWeather(data){
   console.log(data.list)
   $('#title').html("Weather for " + data.city.name + ", " + data.city.country)
   $('#title').show()
+  let day = "";
+  let ctr = 0;
+  let d = new Date();
+  let dayNum = d.getDay();
 
+  //console.log("day: " + day)
   $('#weather').append("<h4>5 Day Forecast</h4>");
+
+  //identify the days of the week
   for(let i = 0; i < data.list.length; i++){
+    //report the weather at 6pm for each of next 5 days
     if(data.list[i].dt_txt.substring(11,13) === '18'){
-      $('#weather').append(data.list[i].dt_txt.substring(0,10) + ": " + data.list[i].main.temp + "&nbsp;&nbsp;&nbsp;&nbsp;" + data.list[i].weather[0].main + "/" + data.list[i].weather[0].description + "<br>")
+      if(dayNum === 0){
+        day = "Sun";
+      }else if(dayNum === 1){
+        day = "Mon";
+      }else if(dayNum === 2){
+        day = "Tue";
+      }else if(dayNum === 3){
+        day = "Wed";
+      }else if(dayNum === 4){
+        day = "Thu";
+      }else if(dayNum === 5){
+        day = "Fri";
+      }else{
+        day = "Sat";
+      }
+      $('#weather').append(data.list[i].dt_txt.substring(5,10) + ": " + "<b>" + Math.round(data.list[i].main.temp) + "&#8457;</b>" + "&nbsp;&nbsp;&nbsp;&nbsp;" + data.list[i].weather[0].main + "/" + data.list[i].weather[0].description + "<br>")
+      console.log("dayNum: " + dayNum)
+      if(dayNum === 6){
+        dayNum = 0;
+      }else{
+        dayNum++;
+      }
     }
-    
   }
 }
 
