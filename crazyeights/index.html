@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Crazy Eights, by Paul Ghayad</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+      <div class="col-sm-6" style="background-color:lavender;">
+        <h1>Crazy Eights</h1>
+          <p>Here is your hand:</p>
+          <i>Click a card to play it:</i>
+          <br>
+          <div id="cards" class="btn-group">
+            
+          </div>
+          
+          <br>
+            <button id="drawBtn" class="btn btn-lg btn-success" onclick="draw()">Draw Card</button>
+            <p id="playAgainBtn" hidden>
+              <button  type="button" class="btn btn-lg btn-danger" onclick="playAgain()">Play Again</button>
+            </p>
+        </div>
+      
+      <div class="col-sm-6" style="background-color:lavenderblush;">
+        <h1>Top Card</h1>
+        <h2 id="topCard"></h2>
+        <p hidden id="flag">Waiting for CPU...</p>
+      </div>
+      </div>
+    </div>
+  
+
+<script src="script.js"></script>
+</body>
+</html>

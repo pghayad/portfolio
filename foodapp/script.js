@@ -1,17 +1,5 @@
 'use strict';
 
-/*
-To Do:
-  -duplicates in restaurants
-    -due to the .click() being assigned inside of a function so it is being duplicately assigned
-  -Add comments
-
-  we just have to stop displayRes from having multiple calls
-
-  NEWEST
-  -if change city and cuisine, menu doesn't change
-*/
-
 
 let obj = {};
 let cityID = 0;
