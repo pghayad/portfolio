@@ -11,41 +11,57 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">Paul Ghayad</a>
-      </div>
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#aboutme">About Me</a></li>
-        <li><a href="#myinterests">My Interests</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#mylocation">My Location</a></li>
-        <li><a href="#contactme">Contact Me</a></li>
-      </ul>
-    </div>
-  </nav>
+  <nav id="hamnav">
+  <label for="hamburger">&#9776;</label>
+  <input type="checkbox" id="hamburger"/>
+  <div id="hamitems">
+    <a href="#">Home</a>
+    <a href="#aboutme">About Me</a>
+    <a href="#myinterests">My Interests</a>
+    <a href="#current">Past CData Work</a>
+    <a href="#projects">Projects</a>
+    <a href="#presentations">Presentations</a>
+    <a href="#contactme">Contact Me</a>
+  </div>
+</nav>
 <div class="jumbotron text-center">
   <h1>Paul Ghayad</h1>
-  <h3>Software Engineer</h3>
-  <h5>Willing to work remotely or in PA, NY, NJ, DE, MD, DC, or VA.</h5> 
-  <img width="800px" height="600px" src="/img/me_on_bike.jpg">
+  <h3>Computer Science Instructor | Software Engineer</h3>
+  <h5>Currently working as a Computer Science Instructor in multiple capacities</h5> 
+  <img id="mainImg" src="/portfolio/pghayad.github.io/img/PaulGhayad-headshot.jpg">
 </div>
   
 <div id="aboutme" class="container">
   <div class="row">
     <div style="background-color: lightblue;" class="col-sm-12 col-lg-12">
-      <a id="aboutme"></a>
       <h3 class="text-center">About Me</h3>
-      <p>Hi, my name is Paul, and I live in the suburbs of Philadelphia.  I grew up in this area, and then went down to Washington, D.C. for college.</p>
-      <p>I majored in Economics, which I enjoyed.  But when I arrived at my first job, I found myself interacting mostly with the Software Engineers at the company.  I could tell I had developed a newfound interest. I wanted to be an Engineer.</p>
-      <p>With that feeling, I enrolled in a few Computer Science courses online.  Within a matter of months, I was able to land my first Web Developer position in Northern Virginia.</p>
+      <div class="text-center" ><a target="_blank" href="https://medium.com/@pghayad/approaching-technical-interviews-bca8b8d1ba5d">My Blog</a></div><br>
+      
+      <p>Hello, my name is Paul, and I live in the suburbs of Philadelphia.  I grew up in this area, 
+        and then moved down to Washington, D.C. for university.</p>
+      <p>I majored in Economics, which I enjoyed, but I never really thought that business was the 
+        field for me.  While working my first job at a software company, I became acquainted with 
+        the Engineering team, and they recommended that I give Computer Science a try.
+      <p>With that feeling, I enrolled in a few Computer Science courses online, and, within a 
+        matter of months, I was able to land my first Software Engineer position in Northern 
+        Virginia, just outside of Washington, DC.  I performed mostly front-end work, using 
+        JavaScript, jQuery, HTML, CSS, and Bootstrap.
+        </p>
       <p>
-        Currently, I am pursuing a Master's in Computer Science.  In my present course, I am building Java web applications using JSPs, servlets, and JDBC.  Previously, I used MySQL workbench and SQL in a Master's level databases course.  My skillset is evolving as each week passes by, and I am thoroughly enjoying the work I am doing.
+        Ever since that role, my professional experience has been mostly as a Computer Science 
+        Instructor.  Currently, I teach at multiple universities, including St. Joseph's University, 
+        with a fervor for the discipline. In fact, I have such a passion for this work that I feel  my students 
+        get both an enjoyable and rewarding experience each time that we collaborate on a project.</b> 
+      </p>
+      <p>Some of the courses I have taught include: Web Application Development (graduate-level), 
+        Design and Analysis of Algorithms, Computer Architecture, as well as several introductory courses
+        in JavaScript, Python, Java, C++, and the like.
       </p>
       <p>
-        As you view this page, I just want to thank you for visiting my portfolio and feel free to get in touch via any of the options below.  Thank you again for your time.
+        Although my strengths mostly lie in front-end development, I
+        possess the skills to work on full-stack web application projects.
+        As you peruse my portfolio, I just want to thank you for visiting. Please feel free to 
+        get in touch via any of the options listed at the bottom of this page.  Happy Coding!
       </p>
     </div>
     <br>
@@ -53,82 +69,116 @@
   </div>
 </div>
 <hr>
-<h3 class="text-center">My Interests</h3><br>
+
 <div id="myinterests" class="text-center">
-  <div class="container">
+  <div style="background-color: pink" class="container">
+    <h3 class="text-center">My Interests</h3><br>
      <div class="hero myInterests">
           
-            <img src="/img/tennis.jpg" alt="tennis"/>
+            <img src="/portfolio/pghayad.github.io/img/tennis.jpg" alt="tennis"/>
       </div>
       <br><br>
       <div class="thumbnails myInterests">
-            <a class="thumbnail"><img src="/img/tennis.jpg" alt="tennis"/></a>
-            <a class="thumbnail"><img src="/img/thinkful.png" alt="thinkful"/></a>
-            <a class="thumbnail"><img src="/img/chess.jpg" alt="chess"/></a>
-            <a class="thumbnail"><img src="/img/cat.jpg" alt="cat"/></a>
+            <a class="thumbnail"><img src="/portfolio/pghayad.github.io/img/tennis.jpg" alt="tennis"/></a>
+            <a class="thumbnail"><img src="/portfolio/pghayad.github.io/img/chess.jpg" alt="chess"/></a>
+            <a class="thumbnail"><img src="/portfolio/pghayad.github.io/img/cat.jpg" alt="cat"/></a>
       </div>
       <p id="description">
       Tennis is one of my all-time favorite sports.  I am actually a USPTA 
-      Certified Tennis Instructor. <br>I play about once or twice per week.
-      When the weather is nice, you can find me outside on a <br>court. Tennis is so great
-      because it is for people of all ages and is a great workout.
+      Certified Tennis Instructor. I play about once or twice per week.
+      When the weather is nice, you can find me outside on a court. Tennis is so great
+      because it is for people of all ages.
     </p>
   </div>
 </div>
 <hr>
-<div id="projects" class="container">
-  <div class="row">
-    <div style="background-color: lightgreen;" class="col-sm-12 col-lg-12">
-      <a id="projects"></a>
-      <h3 class="text-center">Projects</h3>
-      <ul>
-        <div  class="panel panel-warning">
-          <div class="panel-body"><a target="_blank" href="/weatherapp/index.html">Weather App</a></div>
-          <div class="panel-body"><a target="_blank" href="/cocktailapp/index.html">Cocktail App</a></div>
-          <div class="panel-body"><a target="_blank" href="/foodapp/index.html">Food/Restaurant App</a></div>
-          <div class="panel-body"><a target="_blank" href="/quizapp/index.html">Quiz App</a></div>
-        </div>
-      </ul>
-      <h3 class="text-center">Side Projects / Games</h3>
-      <ul>
-        <div class="panel panel-default">
-          <div class="panel-body"><a target="_blank" href="/videopoker/index.html">Video Poker</a></div>
-          <div class="panel-body"><a target="_blank" href="/crazyeights/index.html">Crazy Eights</a></div>
-          <div class="panel-body"><a target="_blank" href="/hangman/index.html">Hangman</a></div>
-          <div class="panel-body"><a target="_blank" href="/memorygame/index.html">The Memory Game</a></div>
-          <div class="panel-body"><a target="_blank" href="/war/index.html">The Game Of War</a></div>
-          <div class="panel-body"><a target="_blank" href="/rockpaperscissors/index.html">Rock Paper Scissors</a></div>
-          <div class="panel-body"><a target="_blank" href="/tictactoe/index.html">Tic Tac Toe</a></div>
-        </div>
-      </ul>
-    </div>
-    <br>
-  </div>
-</div>
 
-<hr>
-<div id="mylocation" class="col-sm-12 col-lg-12 text-center">
-  <h4>My Location</h4>
-  <iframe class="" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d195601.28720359915!2d-75.25811239143708!3d40.00241367555988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6b7d8d4b54beb%3A0x89f514d88c3e58c1!2sPhiladelphia%2C%20PA!5e0!3m2!1sen!2sus!4v1609025857562!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-</div>
-<hr>
-<div id="contactme" class="container text-center">
-  <div class="row">
-    <div style="background-color: ;" class="col-sm-12 col-lg-12">
-      <a id="contactme"></a>
-      <h3>Contact Me</h3>
-      <iframe style="border: 3px dotted white" src="https://docs.google.com/forms/d/e/1FAIpQLSfSaJy1Ozm3mEk9mE7YH75BkyiQcjbkaYyT0Zx2UAAHsltpJg/viewform?embedded=true" width="640" height="582" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+<div id="projects" class="container text-center">
+    <div class="row">
+      <div style="background-color: lightgreen;" class="col-sm-12 col-lg-12">
+        <a id="projects"></a>
+        <h3 class="text-center">Side Projects | Games</h3>
+        <ul>
+          <div  class="panel panel-warning">
+            <div class="panel-body"><a target="_blank" href="/portfolio/pghayad.github.io/weatherapp/index.html">Weather App</a></div>
+            <div class="panel-body"><a target="_blank" href="/portfolio/pghayad.github.io/cocktailapp/index.html">Cocktail App</a></div>
+            <div class="panel-body"><a target="_blank" href="/portfolio/pghayad.github.io/foodapp/index.html">Food/Restaurant App</a></div>
+          
+            <div class="panel-body"><a target="_blank" href="/portfolio/pghayad.github.io/wordle/index.html">Wordle</a></div>
+            <div class="panel-body"><a target="_blank" href="/portfolio/pghayad.github.io/videopoker/index.html">Video Poker</a></div>
+            <div class="panel-body"><a target="_blank" href="/portfolio/pghayad.github.io/crazyeights/index.html">Crazy Eights</a></div>
+            <div class="panel-body"><a target="_blank" href="/portfolio/pghayad.github.io/hangman/index.html">Hangman</a></div>
+            <div class="panel-body"><a target="_blank" href="/portfolio/pghayad.github.io/memorygame/index.html">The Memory Game</a></div>
+            <div class="panel-body"><a target="_blank" href="/portfolio/pghayad.github.io/war/index.html">The Game Of War</a></div>
+            <div class="panel-body"><a target="_blank" href="/portfolio/pghayad.github.io/rockpaperscissors/index.html">Rock Paper Scissors</a></div>
+            <div class="panel-body"><a target="_blank" href="/portfolio/pghayad.github.io/tictactoe/index.html">Tic Tac Toe</a></div>
+            </div>
+          </ul>
+      </div>
       <br>
-      <a href="https://github.com/pghayad" target="_blank"><img width="25px" height="25px" src="/img/github.png"></a>
-      <a href="https://www.linkedin.com/in/pghayad/" target="_blank"><img width="25px" height="25px" src="/img/linkedin.png"></a>
-      <a href="mailto:pghayad@gmail.com" target="_blank"><img width="25px" height="25px" src="/img/gmail.png"></a>
     </div>
-    <br>
+  </div>
+  <hr>
+  <div id="current" style="background-color: lightskyblue;" class="container text-center">
+ <a id="current"></a>
+      <h3>My CData Software, Inc. Web Pages/Articles/Documentation</h3>
+        <div class="panel panel-default">
+          <div class="panel-body"><a target="_blank" href="https://www.cdata.com/kb/articles/sync-kubernetes.rst">Deploying CData Sync in Kubernetes</a></div>
+        <div class="panel-body"><a target="_blank" href="https://www.cdata.com/kb/tech/snowflake-cloud-mode.rst">Snowflake Data Visualizations in Mode Analytics</a></div>
+        <div class="panel-body"><a target="_blank" href="https://www.cdata.com/kb/tech/salesforce-cloud-mode.rst">Salesforce Data Visualizations in Mode Analytics</a></div>  
+      <div class="panel-body"><a target="_blank" href="https://www.cdata.com/kb/tech/cosmosdb-jdbc-spring-boot.rst">Access Live CosmosDB Data in Spring Boot</a></div>  
+  </div>
+  </div>
+<hr>  
+<div id="" style="background-color: lightskyblue;" class="container text-center">
+ <a id=""></a>
+      <h3>My CData Software, Inc. Videos</h3>
+        <div class="panel panel-default">
+          <div class="panel-body"><a target="_blank" href="https://www.youtube.com/watch?v=Yel0AG3DNFU">SharePoint Data Flows in Azure Data Factory</a></div>
+          
+          <div class="panel-body"><a target="_blank" href="https://www.youtube.com/watch?v=JNPhVP6oQMM">Snowflake Data Flows in Azure Data Factory</a></div>
+
+          <div class="panel-body"><a target="_blank" href="https://www.youtube.com/watch?v=CZS59LvP_2U">MongoDB Atlas Data Flows in Azure Data Factory</a></div>
+
+          <div class="panel-body"><a target="_blank" href="https://www.youtube.com/watch?v=x_YbGvOfvbs">Snowflake Data in Power BI</a></div>
+  <div class="panel-body"><a target="_blank" href="https://www.youtube.com/watch?v=ayax-WT1j_c">Salesforce Data in Power BI</a></div>
+<div class="panel-body"><a target="_blank" href="https://www.youtube.com/watch?v=99KWw6Aech4">Parquet Data in Power BI</a></div>
+<div class="panel-body"><a target="_blank" href="https://www.youtube.com/watch?v=HaoW9kAFOfA">MongoDB Atlas Data in Power BI</a></div>
   </div>
 </div>
+<hr>
+
+<div id="presentations" style="background-color: lightyellow;" class="container text-center">
+ <a id="presentations"></a>
+      <h3>Other Video Presentations</h3>
+  
+        <div class="panel panel-default">
+          <div class="panel-body"><a target="_blank" href="https://www.youtube.com/watch?v=ACaouRTyJMI">Flatiron School - Coding For Beginners</a></div>
+          <div class="panel-body"><a target="_blank" href="https://www.youtube.com/watch?v=FvbLuj_Isf0">ReactJS Exercise Review</a></div>
+          
+          <div class="panel-body"><a target="_blank" href="https://www.youtube.com/watch?v=dIxXkqUt0nI">Beginning Stages Of A React App</a></div>
+
+          <div class="panel-body"><a target="_blank" href="https://youtu.be/ruZzieDZeu8">Vanilla JavaScript Web App w/ CRUD</a></div>
+
+          <div class="panel-body"><a target="_blank" href="https://youtu.be/CYX6egvjcmk">Python Lists</a></div>
+        </div>
+  </div>
+<hr>
+<div id="contactme" style="background-color: lightblue;" class="container text-center">
+ <a id="contactme"></a>
+      <h3>Contact Me</h3>
+      
+      <br>
+      <a href="https://github.com/pghayad" target="_blank"><img width="25px" height="25px" src="/portfolio/pghayad.github.io/img/github.png"></a>
+      <a href="https://www.linkedin.com/in/pghayad/" target="_blank"><img width="25px" height="25px" src="/portfolio/pghayad.github.io/img/linkedin.png"></a>
+      <a href="mailto:pghayad@gmail.com" target="_blank"><img width="25px" height="25px" src="/portfolio/pghayad.github.io/img/gmail.png"></a>
+  </div>
+     
+
 <br><br>
+<p id="test"></p>
 <div class="footer1 text-center">
-  <p style="color: white;">Copyright &#169; Paul Ghayad 2021</p>
+  <p style="color: white;">Copyright &#169; Paul Ghayad 2025</p>
 </div>
 
 </main>

@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 100px;
+  padding: 10px;
+  height: 100px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+div {
+display: inline-flex;
+}
+
+    .toggler { width: 100px; height: 100px;}
+    #button { padding: .5em 1em; text-decoration: none; }
+    .effect { width: 48%; height: 100px; padding: 0.4em; position: relative; background: #fff;}

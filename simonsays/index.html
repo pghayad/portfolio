@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simon Says by Paul Ghayad</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="script.js"></script>
+</head>
+<body>
+<h1>Simon Says</h1>
+<h2>Try to guess the color pattern!</h2>
+<button id="playBtn" class="ui-state-default ui-corner-all">Play Game</button><br>
+<div class="row">
+  <div class="column toggler" style="">
+    <div id="effect" class="effect ui-widget-content ui-corner-all">
+      <p>
+        
+      </p>
+    </div>
+  </div>
+  <div class="column toggler" style="">
+    <div id="effect1" class="effect ui-widget-content ui-corner-all">
+      <p>
+        
+      </p>
+    </div>
+  </div>
+
+
+</div>
+
+<div class="row">
+    <div class="column toggler" style="">
+    <div id="effect2" class="effect ui-widget-content ui-corner-all">
+      <p>
+        
+      </p>
+    </div>
+  </div>
+  <div class="column toggler" style="">
+    <div id="effect3" class="effect ui-widget-content ui-corner-all">
+      <p>
+        
+      </p>
+    </div>
+  </div>
+</div>
+<p hidden id="q">
+  What was the pattern? Type b for blue, g for green, r for red, and y for yellow.  No commas.
+  <input id="val" type="text" maxlength="10"/>
+  <button id="submitBtn" onclick="submit()">Submit</button>
+</p>
+ 
+ 
+</body>
+</html>

@@ -52,17 +52,72 @@ a.thumbnail:hover {
   max-height: 100%;
 }
 
-.myInterests {
-  /*background-color: pink;*/
-}
-
-li:hover {
-  /**/
-  /*background-color: grey;*/
-}
-
 hr {
-  width: 1160px;
+  width: 75%;
   border: 3px dotted lightyellow;
   /*border-radius: 5px;*/
+}
+
+#hamnav {
+  width: 100%;
+  background: #000;
+  top: 0;
+}
+
+/* Hide Hamburger */
+#hamnav label, #hamburger { display: none; }
+
+/* Horizontal Menu Items */
+#hamitems { display: flex; }
+
+#hamitems a {
+  width: 20%; 
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+#hamitems a:hover {
+  background: blue;
+}
+
+
+@media screen and (max-width: 768px){
+  #hamnav label { 
+    display: inline-block; 
+    color: white;
+    background: blue;
+    font-style: normal;
+    font-size: 1.2em;
+    padding: 10px;
+  }
+
+  #hamitems a {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border-top: 1px solid #333;
+  }
+
+
+  #hamitems { display: none; }
+
+  #hamnav input:checked ~ #hamitems { display: block; }
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: arial, sans-serif;
+}
+
+/*responsive image */
+#mainImg {
+  width: 35%;
+  height: auto;
+}
+
+iframe {
+  width: 60%;
+  height: auto;
 }
